@@ -1,7 +1,7 @@
-# Vue 3 + Vite
+DESCIPCION: Aplicacion de clima hecho con vue vite
 
-This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+LINK: https://app-vue-clima.netlify.app
 
-## Recommended IDE Setup
+![captura-tandil](https://user-images.githubusercontent.com/74424452/178818639-9ebed3ca-dfb9-47ca-805c-40b0df6e83fb.png)
 
-- [VS Code](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar)
+![captura-argentina](https://user-images.githubusercontent.com/74424452/178818649-d0e06b83-7c4c-45df-8c82-b562eba3f395.png)
