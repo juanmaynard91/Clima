@@ -81,6 +81,11 @@ export default {
 <style>
 @import url("https://fonts.googleapis.com/css2?family=Ubuntu&display=swap");
 
+:root {
+  --animacion-fondo: bg-animado 5s linear infinite alternate;
+  --tamaño-fondo: 200% 200%;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -91,15 +96,28 @@ body {
   font-family: "Ubuntu", sans-serif;
 }
 
+@keyframes bg-animado {
+  from {
+    background-position: 0, 0;
+  }
+  to {
+    background-position: 100% 100%;
+  }
+}
+
 #app {
   background: linear-gradient(to right, #00b4db, #0083b0);
   background-size: cover;
   background-position: bottom;
   transition: 0.4s;
+  animation : var(--animacion-fondo);
+  background-size: var(--tamaño-fondo);
 }
 
 #app.warm {
   background: linear-gradient(to right, #fdc830, #f37335);
+  animation : var(--animacion-fondo);
+  background-size: var(--tamaño-fondo);
 }
 
 main {
@@ -108,9 +126,7 @@ main {
 }
 
 h1 {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  text-align: center;
   color: #fff;
 }
 
