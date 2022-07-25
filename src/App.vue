@@ -2,7 +2,7 @@
   <div id="app" :class=" typeof weather.main != 'undefined' && weather.main.temp > 16 ? 'warm' : ''">
     <!-- typeof != "undefined" para que pueda mostrar la informacion -->
     <main class="container">
-      <h1>Weather App</h1>
+      <h1 class="titulo">Weather App</h1>
 
       <div class="search-box">
         <input type="text" class="form-control search-bar" placeholder="Search..." v-model.trim="buscar" @keypress="fetchWeather" />
@@ -41,9 +41,7 @@ export default {
   methods: {
     fetchWeather(e) {
       if (e.key == "Enter") {
-        fetch(
-          `${this.url}weather?q=${this.buscar}&units=metric&APPID=${this.key}`
-        )
+        fetch(`${this.url}weather?q=${this.buscar}&units=metric&APPID=${this.key}`)
           .then((res) => {
             return res.json();
           })
@@ -79,7 +77,7 @@ export default {
 </script>
 
 <style>
-@import url("https://fonts.googleapis.com/css2?family=Ubuntu&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
 
 :root {
   --animacion-fondo: bg-animado 5s linear infinite alternate;
@@ -93,7 +91,7 @@ export default {
 }
 
 body {
-  font-family: "Ubuntu", sans-serif;
+  font-family: 'Anton', sans-serif;
 }
 
 @keyframes bg-animado {
@@ -125,9 +123,23 @@ main {
   padding: 25px;
 }
 
-h1 {
+.titulo {
   text-align: center;
-  color: #fff;
+  /*color: transparent;*/
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 4.8rem;
+  color: rgba(0, 0, 0, .2);
+
+  /* imagen en el titulo */
+  background-image: url("../src/assets/fondo-titulo.jpg");
+  background-size: cover;
+  background-position: center;
+  background-clip: text;
+
+  /* para que ande en todos los navegadores */
+  -webkit-background-clip: text;
+  /*-webkit-text-fill-color: transparent;*/
 }
 
 .search-box {
