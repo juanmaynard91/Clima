@@ -2,10 +2,6 @@
   <!-- typeof != "undefined" para que pueda mostrar la informacion -->
   <div id="app" :class=" typeof weather.main != 'undefined' && weather.main.temp > 16 ? 'warm' : ''">
     <main class="container">
-      <!--<div class="contenedor-video">
-        <video autoplay muted preload loop src="../src/assets/weather-titulo.mp4" type="video/mp4" />
-        <h1 class="titulo">Weather App</h1>
-      </div>-->
 
       <h1 class="titulo">Weather App</h1>
 
@@ -82,8 +78,6 @@ export default {
 </script>
 
 <style>
-@import url("https://fonts.googleapis.com/css2?family=Anton&display=swap");
-
 :root {
   --animacion-fondo: bg-animado 5s linear infinite alternate;
   --tamaño-fondo: 200% 200%;
@@ -136,33 +130,14 @@ main {
   font-size: 3.5rem;
   letter-spacing: 3px;
 
-  /* para el video del titulo */
-  /*mix-blend-mode: multiply;*/
-
-  /* imagen en el titulo */
-  /*background-image: url("../src/assets/weather-titulo.mp4");*/
-  background: url("../src/assets/titulo-gif.gif") no-repeat center center / cover;
+  background: url("../src/assets/titulo-gif.gif") no-repeat center center / cover; 
   background-size: cover;
   background-position: center;
-  background-clip: text;
+  background-clip: text; 
 
-  /* para que ande en todos los navegadores */
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
-
-/*.contenedor-video {
-  position: relative;
-}
-
-video {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}*/
 
 .search-box {
   width: 100%;
