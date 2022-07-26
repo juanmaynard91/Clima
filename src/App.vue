@@ -10,7 +10,7 @@
       <h1 class="titulo">Weather App</h1>
 
       <div class="search-box">
-        <input type="text" class="form-control search-bar" placeholder="Search..." v-model.trim="buscar" @keypress="fetchWeather" />
+        <input type="text" class="form-control search-bar" placeholder="Search..." v-model="buscar" @keypress="fetchWeather" />
       </div>
 
       <div class="weather-wrap" v-if="typeof weather.main != 'undefined'">
