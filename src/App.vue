@@ -1,7 +1,12 @@
 <template>
+  <!-- typeof != "undefined" para que pueda mostrar la informacion -->
   <div id="app" :class=" typeof weather.main != 'undefined' && weather.main.temp > 16 ? 'warm' : ''">
-    <!-- typeof != "undefined" para que pueda mostrar la informacion -->
     <main class="container">
+      <!--<div class="contenedor-video">
+        <video autoplay muted preload loop src="../src/assets/weather-titulo.mp4" type="video/mp4" />
+        <h1 class="titulo">Weather App</h1>
+      </div>-->
+
       <h1 class="titulo">Weather App</h1>
 
       <div class="search-box">
@@ -64,8 +69,8 @@ export default {
 
     fecha() {
       const d = new Date();
-      const months = ["January","February","March","April","May","June","July","August","September","October","November","December",];
-      const days = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday",];
+      const months = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+      const days = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
       const day = days[d.getDay()];
       const date = d.getDate();
       const month = months[d.getMonth()];
@@ -77,7 +82,7 @@ export default {
 </script>
 
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Anton&display=swap");
 
 :root {
   --animacion-fondo: bg-animado 5s linear infinite alternate;
@@ -91,7 +96,7 @@ export default {
 }
 
 body {
-  font-family: 'Anton', sans-serif;
+  font-family: "Anton", sans-serif;
 }
 
 @keyframes bg-animado {
@@ -104,17 +109,17 @@ body {
 }
 
 #app {
-  background: linear-gradient(to right, #00b4db, #0083b0);
+  background: linear-gradient(to right, #00c6ff, #0072ff);
   background-size: cover;
   background-position: bottom;
   transition: 0.4s;
-  animation : var(--animacion-fondo);
+  animation: var(--animacion-fondo);
   background-size: var(--tamaño-fondo);
 }
 
 #app.warm {
-  background: linear-gradient(to right, #fdc830, #f37335);
-  animation : var(--animacion-fondo);
+  background: linear-gradient(to right, #fd1d1d, #fcb045);
+  animation: var(--animacion-fondo);
   background-size: var(--tamaño-fondo);
 }
 
@@ -125,22 +130,39 @@ main {
 
 .titulo {
   text-align: center;
-  /*color: transparent;*/
+  color: transparent;
   text-transform: uppercase;
   font-weight: bold;
-  font-size: 4.8rem;
-  color: rgba(0, 0, 0, .2);
+  font-size: 3.5rem;
+  letter-spacing: 3px;
+
+  /* para el video del titulo */
+  /*mix-blend-mode: multiply;*/
 
   /* imagen en el titulo */
-  background-image: url("../src/assets/fondo-titulo.jpg");
+  /*background-image: url("../src/assets/weather-titulo.mp4");*/
+  background: url("../src/assets/titulo-gif.gif") no-repeat center center / cover;
   background-size: cover;
   background-position: center;
   background-clip: text;
 
   /* para que ande en todos los navegadores */
   -webkit-background-clip: text;
-  /*-webkit-text-fill-color: transparent;*/
+  -webkit-text-fill-color: transparent;
 }
+
+/*.contenedor-video {
+  position: relative;
+}
+
+video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}*/
 
 .search-box {
   width: 100%;
@@ -206,5 +228,11 @@ main {
   font-weight: 700;
   font-style: italic;
   text-shadow: 3px 6px rgba(0, 0, 0, 0.25);
+}
+
+@media (min-width: 1280px) {
+  .titulo {
+    font-size: 6rem;
+  }
 }
 </style>
