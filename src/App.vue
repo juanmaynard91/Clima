@@ -1,22 +1,11 @@
 <template>
   <!-- typeof != "undefined" para que pueda mostrar la informacion -->
-  <div
-    id="app"
-    :class="
-      typeof weather.main != 'undefined' && weather.main.temp > 16 ? 'warm' : ''
-    "
-  >
+  <div id="app" :class=" typeof weather.main != 'undefined' && weather.main.temp > 16 ? 'warm' : ''">
     <main class="container">
       <h1 class="titulo">Weather App</h1>
 
       <div class="search-box">
-        <input
-          type="text"
-          class="form-control search-bar"
-          placeholder="Search..."
-          v-model.trim="buscar"
-          @keypress="fetchWeather"
-        />
+        <input type="text" class="form-control search-bar" placeholder="Search..." v-model.trim="buscar" @keypress="fetchWeather" />
       </div>
 
       <div class="weather-wrap" v-if="typeof weather.main != 'undefined'">
@@ -52,9 +41,7 @@ export default {
   methods: {
     fetchWeather(e) {
       if (e.key == "Enter") {
-        fetch(
-          `${this.url}weather?q=${this.buscar}&units=metric&APPID=${this.key}`
-        )
+        fetch(`${this.url}weather?q=${this.buscar}&units=metric&APPID=${this.key}`)
           .then((res) => {
             return res.json();
           })
@@ -77,29 +64,8 @@ export default {
 
     fecha() {
       const d = new Date();
-      const months = [
-        "January",
-        "February",
-        "March",
-        "April",
-        "May",
-        "June",
-        "July",
-        "August",
-        "September",
-        "October",
-        "November",
-        "December",
-      ];
-      const days = [
-        "Sunday",
-        "Monday",
-        "Tuesday",
-        "Wednesday",
-        "Thursday",
-        "Friday",
-        "Saturday",
-      ];
+      const months = ["January","February","March","April","May","June","July","August","September","October","November","December",];
+      const days = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday",];
       const day = days[d.getDay()];
       const date = d.getDate();
       const month = months[d.getMonth()];
