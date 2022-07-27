@@ -78,7 +78,7 @@ export default {
 </script>
 
 <style>
-:root {
+/*:root {
   --animacion-fondo: bg-animado 5s linear infinite alternate;
   --tamaño-fondo: 200% 200%;
 }
@@ -120,7 +120,7 @@ body {
 main {
   min-height: 100vh;
   padding: 25px;
-}
+}*/
 
 .titulo {
   text-align: center;
@@ -130,16 +130,16 @@ main {
   font-size: 3.5rem;
   letter-spacing: 3px;
 
-  background: url("../src/assets/titulo-gif.gif") no-repeat center center / cover; 
+  background: url("../src/assets/titulo-imagen.jpg"); 
   background-size: cover;
-  background-position: center;
+  background-position: top;
   background-clip: text; 
 
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
-.search-box {
+/*.search-box {
   width: 100%;
   margin-bottom: 30px;
 }
@@ -209,5 +209,7 @@ main {
   .titulo {
     font-size: 6rem;
   }
-}
+}*/
+
+#app,#app.warm{animation:var(--animacion-fondo)}:root{--animacion-fondo:bg-animado 5s linear infinite alternate;--tamaño-fondo:200% 200%}*{margin:0;padding:0;box-sizing:border-box}body{font-family:Anton,sans-serif}@keyframes bg-animado{from{background-position:0,0}to{background-position:100% 100%}}#app{background:linear-gradient(to right,#00c6ff,#0072ff);background-size:cover;background-position:bottom;transition:.4s;background-size:var(--tamaño-fondo)}#app.warm{background:linear-gradient(to right,#fd1d1d,#fcb045);background-size:var(--tamaño-fondo)}main{min-height:100vh;padding:25px}.search-box{width:100%;margin-bottom:30px}.search-box .search-bar{display:block;width:100%;padding:15px;color:#313131;font-size:20px;appearance:none;border:none;outline:0;background:rgba(255,255,255,.5);box-shadow:0 0 8px rgba(0,0,0,.25);transition:.4s}.search-box .search-bar:focus{box-shadow:0 0 16px rgba(0,0,0,.25);background-color:rgba(255,255,255,.75)}.location-box .location{color:#fff;font-size:32px;font-weight:500;text-align:center;text-shadow:1px 3px rgba(0,0,0,.25)}.weather-box .temp,.weather-box .weather{color:#fff;text-shadow:3px 6px rgba(0,0,0,.25)}.location-box .date{color:#fff;font-size:20px;font-weight:300;font-style:italic;text-align:center}.weather-box{text-align:center}.weather-box .temp{display:inline-block;padding:10px 25px;font-size:102px;font-weight:900;background-color:rgba(255,255,255,.25);border-radius:16px;margin:30px 0;box-shadow:3px 6px rgba(0,0,0,.25)}.weather-box .weather{font-size:48px;font-weight:700;font-style:italic}@media (min-width:1280px){.titulo{font-size:6rem}}
 </style>
